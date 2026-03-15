@@ -51,6 +51,37 @@ This ensures that sensitive information is stored securely as ciphertext.
 
 4) Git
 
-5) Linux command line 
+5) Linux command line
+
+# HOW IT WORKS
+
+
+workflow
+      +------------------+
+      |  Plaintext File  |
+      |   secret1.txt    |
+      +------------------+
+               |
+               |  Encrypt using AWS KMS
+               v
+      +------------------+
+      | Encrypted File   |
+      | secret1.txt.encrypted |
+      +------------------+
+               |
+               |  Decrypt using AWS KMS
+               v
+      +------------------+
+      | Decrypted File   |
+      | secret1.txt.encrypted.decrypted |
+      +------------------+
+
+
+# Explanation
+1) Plaintext File – The file you want to protect (secret1.txt).
+2) Encrypt – Your Python script sends the data to AWS KMS for encryption.
+3) Encrypted File – The encrypted output is unreadable without access to the KMS key.
+4) Decrypt – The script sends the ciphertext to AWS KMS to recover the original data.
+5) Decrypted File – Restores the plaintext to secret1.txt.encrypted.decrypted for verification.
 
 
