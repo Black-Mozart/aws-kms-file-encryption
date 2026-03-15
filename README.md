@@ -55,26 +55,8 @@ This ensures that sensitive information is stored securely as ciphertext.
 
 # HOW IT WORKS
 
-
-workflow
-      +------------------+
-      |  Plaintext File  |
-      |   secret1.txt    |
-      +------------------+
-               |
-               |  Encrypt using AWS KMS
-               v
-      +------------------+
-      | Encrypted File   |
-      | secret1.txt.encrypted |
-      +------------------+
-               |
-               |  Decrypt using AWS KMS
-               v
-      +------------------+
-      | Decrypted File   |
-      | secret1.txt.encrypted.decrypted |
-      +------------------+
+## workflow
+[Plaintext File: secret1.txt] ---> [Encrypt using AWS KMS] ---> [Encrypted File: secret1.txt.encrypted] ---> [Decrypt using AWS KMS] ---> [Decrypted File: secret1.txt.encrypted.decrypted] 
 
 
 # Explanation
