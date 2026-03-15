@@ -1,7 +1,7 @@
 import boto3
 import os
 
-# ---------- Config ----------
+# Config 
 kms_key_arn = "YOUR_KMS_KEY_ARN"
 input_file = "secret1.txt"
 encrypted_file = "output/secret1.txt.encrypted"
